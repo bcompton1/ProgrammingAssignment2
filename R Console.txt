@@ -1,0 +1,600 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.79 (8095) x86_64-apple-darwin17.0]
+
+[History restored from /Users/bekacompton/.Rapp.history]
+
+> pollutantmean <- function(directory, pollutant, id=1:332) { 
++   
++   # Create a list of files in the directory argument
++   files_list <- list.files(directory, full.names = TRUE) 
++   df <- data.frame() #creates an empty data frame
++   
++   # Loop through the files, rbinding them together
++   for (i in id) {
++     df <- rbind(df, read.csv(files_list[i]))
++   }
++   
++   # Subset the column that matches the 'pollutant'  argument
++   df_subset <- df[,pollutant] 
++   
++   # Calculate the mean value
++   mean(df_subset, na.rm = TRUE) 
++ }
+> pollutantmean("specdata", "sulfate", 1:10)
+Error in file(file, "rt") : invalid 'description' argument
+> traceback()
+6: file(file, "rt")
+5: read.table(file = file, header = header, sep = sep, quote = quote, 
+       dec = dec, fill = fill, comment.char = comment.char, ...)
+4: read.csv(files_list[i]) at #9
+3: rbind(deparse.level, ...)
+2: rbind(df, read.csv(files_list[i])) at #9
+1: pollutantmean("specdata", "sulfate", 1:10)
+> polluntantmean("specdata", "nitrate", 70:72)
+Error in polluntantmean("specdata", "nitrate", 70:72) : 
+  could not find function "polluntantmean"
+> pollutantmean("specdata", "nitrate", 70:72)
+Error in file(file, "rt") : invalid 'description' argument
+> submit()
+Error in submit() : could not find function "submit"
+> polluntantmean("specdata", "sulfate", 1:10)
+Error in polluntantmean("specdata", "sulfate", 1:10) : 
+  could not find function "polluntantmean"
+> pollutantmean("specdata", "sulfate", 1:10)
+Error in file(file, "rt") : invalid 'description' argument
+> v
+Error: object 'v' not found
+> data.tabe()
+Error in data.tabe() : could not find function "data.tabe"
+> data.table()
+Error in data.table() : could not find function "data.table"
+> list.files()
+  [1] "001.csv"                 "002.csv"                 "003.csv"                
+  [4] "004.csv"                 "005.csv"                 "006.csv"                
+  [7] "007.csv"                 "008.csv"                 "009.csv"                
+ [10] "010.csv"                 "011.csv"                 "012.csv"                
+ [13] "013.csv"                 "014.csv"                 "015.csv"                
+ [16] "016.csv"                 "017.csv"                 "018.csv"                
+ [19] "019.csv"                 "020.csv"                 "021.csv"                
+ [22] "022.csv"                 "023.csv"                 "024.csv"                
+ [25] "025.csv"                 "026.csv"                 "027.csv"                
+ [28] "028.csv"                 "029.csv"                 "030.csv"                
+ [31] "031.csv"                 "032.csv"                 "033.csv"                
+ [34] "034.csv"                 "035.csv"                 "036.csv"                
+ [37] "037.csv"                 "038.csv"                 "039.csv"                
+ [40] "040.csv"                 "041.csv"                 "042.csv"                
+ [43] "043.csv"                 "044.csv"                 "045.csv"                
+ [46] "046.csv"                 "047.csv"                 "048.csv"                
+ [49] "049.csv"                 "050.csv"                 "051.csv"                
+ [52] "052.csv"                 "053.csv"                 "054.csv"                
+ [55] "055.csv"                 "056.csv"                 "057.csv"                
+ [58] "058.csv"                 "059.csv"                 "060.csv"                
+ [61] "061.csv"                 "062.csv"                 "063.csv"                
+ [64] "064.csv"                 "065.csv"                 "066.csv"                
+ [67] "067.csv"                 "068.csv"                 "069.csv"                
+ [70] "070.csv"                 "071.csv"                 "072.csv"                
+ [73] "073.csv"                 "074.csv"                 "075.csv"                
+ [76] "076.csv"                 "077.csv"                 "078.csv"                
+ [79] "079.csv"                 "080.csv"                 "081.csv"                
+ [82] "082.csv"                 "083.csv"                 "084.csv"                
+ [85] "085.csv"                 "086.csv"                 "087.csv"                
+ [88] "088.csv"                 "089.csv"                 "090.csv"                
+ [91] "091.csv"                 "092.csv"                 "093.csv"                
+ [94] "094.csv"                 "095.csv"                 "096.csv"                
+ [97] "097.csv"                 "098.csv"                 "099.csv"                
+[100] "100.csv"                 "101.csv"                 "102.csv"                
+[103] "103.csv"                 "104.csv"                 "105.csv"                
+[106] "106.csv"                 "107.csv"                 "108.csv"                
+[109] "109.csv"                 "110.csv"                 "111.csv"                
+[112] "112.csv"                 "113.csv"                 "114.csv"                
+[115] "115.csv"                 "116.csv"                 "117.csv"                
+[118] "118.csv"                 "119.csv"                 "120.csv"                
+[121] "121.csv"                 "122.csv"                 "123.csv"                
+[124] "124.csv"                 "125.csv"                 "126.csv"                
+[127] "127.csv"                 "128.csv"                 "129.csv"                
+[130] "130.csv"                 "131.csv"                 "132.csv"                
+[133] "133.csv"                 "134.csv"                 "135.csv"                
+[136] "136.csv"                 "137.csv"                 "138.csv"                
+[139] "139.csv"                 "140.csv"                 "141.csv"                
+[142] "142.csv"                 "143.csv"                 "144.csv"                
+[145] "145.csv"                 "146.csv"                 "147.csv"                
+[148] "148.csv"                 "149.csv"                 "150.csv"                
+[151] "151.csv"                 "152.csv"                 "153.csv"                
+[154] "154.csv"                 "155.csv"                 "156.csv"                
+[157] "157.csv"                 "158.csv"                 "159.csv"                
+[160] "160.csv"                 "161.csv"                 "162.csv"                
+[163] "163.csv"                 "164.csv"                 "165.csv"                
+[166] "166.csv"                 "167.csv"                 "168.csv"                
+[169] "169.csv"                 "170.csv"                 "171.csv"                
+[172] "172.csv"                 "173.csv"                 "174.csv"                
+[175] "175.csv"                 "176.csv"                 "177.csv"                
+[178] "178.csv"                 "179.csv"                 "180.csv"                
+[181] "181.csv"                 "182.csv"                 "183.csv"                
+[184] "184.csv"                 "185.csv"                 "186.csv"                
+[187] "187.csv"                 "188.csv"                 "189.csv"                
+[190] "190.csv"                 "191.csv"                 "192.csv"                
+[193] "193.csv"                 "194.csv"                 "195.csv"                
+[196] "196.csv"                 "197.csv"                 "198.csv"                
+[199] "199.csv"                 "200.csv"                 "201.csv"                
+[202] "202.csv"                 "203.csv"                 "204.csv"                
+[205] "205.csv"                 "206.csv"                 "207.csv"                
+[208] "208.csv"                 "209.csv"                 "210.csv"                
+[211] "211.csv"                 "212.csv"                 "213.csv"                
+[214] "214.csv"                 "215.csv"                 "216.csv"                
+[217] "217.csv"                 "218.csv"                 "219.csv"                
+[220] "220.csv"                 "221.csv"                 "222.csv"                
+[223] "223.csv"                 "224.csv"                 "225.csv"                
+[226] "226.csv"                 "227.csv"                 "228.csv"                
+[229] "229.csv"                 "230.csv"                 "231.csv"                
+[232] "232.csv"                 "233.csv"                 "234.csv"                
+[235] "235.csv"                 "236.csv"                 "237.csv"                
+[238] "238.csv"                 "239.csv"                 "240.csv"                
+[241] "241.csv"                 "242.csv"                 "243.csv"                
+[244] "244.csv"                 "245.csv"                 "246.csv"                
+[247] "247.csv"                 "248.csv"                 "249.csv"                
+[250] "250.csv"                 "251.csv"                 "252.csv"                
+[253] "253.csv"                 "254.csv"                 "255.csv"                
+[256] "256.csv"                 "257.csv"                 "258.csv"                
+[259] "259.csv"                 "260.csv"                 "261.csv"                
+[262] "262.csv"                 "263.csv"                 "264.csv"                
+[265] "265.csv"                 "266.csv"                 "267.csv"                
+[268] "268.csv"                 "269.csv"                 "270.csv"                
+[271] "271.csv"                 "272.csv"                 "273.csv"                
+[274] "274.csv"                 "275.csv"                 "276.csv"                
+[277] "277.csv"                 "278.csv"                 "279.csv"                
+[280] "280.csv"                 "281.csv"                 "282.csv"                
+[283] "283.csv"                 "284.csv"                 "285.csv"                
+[286] "286.csv"                 "287.csv"                 "288.csv"                
+[289] "289.csv"                 "290.csv"                 "291.csv"                
+[292] "292.csv"                 "293.csv"                 "294.csv"                
+[295] "295.csv"                 "296.csv"                 "297.csv"                
+[298] "298.csv"                 "299.csv"                 "300.csv"                
+[301] "301.csv"                 "302.csv"                 "303.csv"                
+[304] "304.csv"                 "305.csv"                 "306.csv"                
+[307] "307.csv"                 "308.csv"                 "309.csv"                
+[310] "310.csv"                 "311.csv"                 "312.csv"                
+[313] "313.csv"                 "314.csv"                 "315.csv"                
+[316] "316.csv"                 "317.csv"                 "318.csv"                
+[319] "319.csv"                 "320.csv"                 "321.csv"                
+[322] "322.csv"                 "323.csv"                 "324.csv"                
+[325] "325.csv"                 "326.csv"                 "327.csv"                
+[328] "328.csv"                 "329.csv"                 "330.csv"                
+[331] "331.csv"                 "332.csv"                 "makevector.R"           
+[334] "Pollutionmean.R"         "Pollutsntmean.R"         "rprog_data_specdata.zip"
+> pollutantmean("specdata", "Sulfate",)
+Error in file(file, "rt") : invalid 'description' argument
+> require(data.table)
+Loading required package: data.table
+data.table 1.14.4 using 1 threads (see ?getDTthreads).  Latest news: r-datatable.com
+**********
+This installation of data.table has not detected OpenMP support. It should still work but in single-threaded mode.
+This is a Mac. Please read https://mac.r-project.org/openmp/. Please engage with Apple and ask them for support. Check r-datatable.com for updates, and our Mac instructions here: https://github.com/Rdatatable/data.table/wiki/Installation. After several years of many reports of installation problems on Mac, it's time to gingerly point out that there have been no similar problems on Windows or Linux.
+**********
+> pollutantmean(specdata, nitrate)
+Error in list.files(directory, full.names = TRUE) : 
+  object 'specdata' not found
+> list.files
+function (path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE, 
+    recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE, 
+    no.. = FALSE) 
+.Internal(list.files(path, pattern, all.files, full.names, recursive, 
+    ignore.case, include.dirs, no..))
+<bytecode: 0x7fccf0c704b0>
+<environment: namespace:base>
+> list.files()
+  [1] "001.csv"                     "002.csv"                    
+  [3] "003.csv"                     "004.csv"                    
+  [5] "005.csv"                     "006.csv"                    
+  [7] "007.csv"                     "008.csv"                    
+  [9] "009.csv"                     "010.csv"                    
+ [11] "011.csv"                     "012.csv"                    
+ [13] "013.csv"                     "014.csv"                    
+ [15] "015.csv"                     "016.csv"                    
+ [17] "017.csv"                     "018.csv"                    
+ [19] "019.csv"                     "020.csv"                    
+ [21] "021.csv"                     "022.csv"                    
+ [23] "023.csv"                     "024.csv"                    
+ [25] "025.csv"                     "026.csv"                    
+ [27] "027.csv"                     "028.csv"                    
+ [29] "029.csv"                     "030.csv"                    
+ [31] "031.csv"                     "032.csv"                    
+ [33] "033.csv"                     "034.csv"                    
+ [35] "035.csv"                     "036.csv"                    
+ [37] "037.csv"                     "038.csv"                    
+ [39] "039.csv"                     "040.csv"                    
+ [41] "041.csv"                     "042.csv"                    
+ [43] "043.csv"                     "044.csv"                    
+ [45] "045.csv"                     "046.csv"                    
+ [47] "047.csv"                     "048.csv"                    
+ [49] "049.csv"                     "050.csv"                    
+ [51] "051.csv"                     "052.csv"                    
+ [53] "053.csv"                     "054.csv"                    
+ [55] "055.csv"                     "056.csv"                    
+ [57] "057.csv"                     "058.csv"                    
+ [59] "059.csv"                     "060.csv"                    
+ [61] "061.csv"                     "062.csv"                    
+ [63] "063.csv"                     "064.csv"                    
+ [65] "065.csv"                     "066.csv"                    
+ [67] "067.csv"                     "068.csv"                    
+ [69] "069.csv"                     "070.csv"                    
+ [71] "071.csv"                     "072.csv"                    
+ [73] "073.csv"                     "074.csv"                    
+ [75] "075.csv"                     "076.csv"                    
+ [77] "077.csv"                     "078.csv"                    
+ [79] "079.csv"                     "080.csv"                    
+ [81] "081.csv"                     "082.csv"                    
+ [83] "083.csv"                     "084.csv"                    
+ [85] "085.csv"                     "086.csv"                    
+ [87] "087.csv"                     "088.csv"                    
+ [89] "089.csv"                     "090.csv"                    
+ [91] "091.csv"                     "092.csv"                    
+ [93] "093.csv"                     "094.csv"                    
+ [95] "095.csv"                     "096.csv"                    
+ [97] "097.csv"                     "098.csv"                    
+ [99] "099.csv"                     "100.csv"                    
+[101] "101.csv"                     "102.csv"                    
+[103] "103.csv"                     "104.csv"                    
+[105] "105.csv"                     "106.csv"                    
+[107] "107.csv"                     "108.csv"                    
+[109] "109.csv"                     "110.csv"                    
+[111] "111.csv"                     "112.csv"                    
+[113] "113.csv"                     "114.csv"                    
+[115] "115.csv"                     "116.csv"                    
+[117] "117.csv"                     "118.csv"                    
+[119] "119.csv"                     "120.csv"                    
+[121] "121.csv"                     "122.csv"                    
+[123] "123.csv"                     "124.csv"                    
+[125] "125.csv"                     "126.csv"                    
+[127] "127.csv"                     "128.csv"                    
+[129] "129.csv"                     "130.csv"                    
+[131] "131.csv"                     "132.csv"                    
+[133] "133.csv"                     "134.csv"                    
+[135] "135.csv"                     "136.csv"                    
+[137] "137.csv"                     "138.csv"                    
+[139] "139.csv"                     "140.csv"                    
+[141] "141.csv"                     "142.csv"                    
+[143] "143.csv"                     "144.csv"                    
+[145] "145.csv"                     "146.csv"                    
+[147] "147.csv"                     "148.csv"                    
+[149] "149.csv"                     "150.csv"                    
+[151] "151.csv"                     "152.csv"                    
+[153] "153.csv"                     "154.csv"                    
+[155] "155.csv"                     "156.csv"                    
+[157] "157.csv"                     "158.csv"                    
+[159] "159.csv"                     "160.csv"                    
+[161] "161.csv"                     "162.csv"                    
+[163] "163.csv"                     "164.csv"                    
+[165] "165.csv"                     "166.csv"                    
+[167] "167.csv"                     "168.csv"                    
+[169] "169.csv"                     "170.csv"                    
+[171] "171.csv"                     "172.csv"                    
+[173] "173.csv"                     "174.csv"                    
+[175] "175.csv"                     "176.csv"                    
+[177] "177.csv"                     "178.csv"                    
+[179] "179.csv"                     "180.csv"                    
+[181] "181.csv"                     "182.csv"                    
+[183] "183.csv"                     "184.csv"                    
+[185] "185.csv"                     "186.csv"                    
+[187] "187.csv"                     "188.csv"                    
+[189] "189.csv"                     "190.csv"                    
+[191] "191.csv"                     "192.csv"                    
+[193] "193.csv"                     "194.csv"                    
+[195] "195.csv"                     "196.csv"                    
+[197] "197.csv"                     "198.csv"                    
+[199] "199.csv"                     "200.csv"                    
+[201] "201.csv"                     "202.csv"                    
+[203] "203.csv"                     "204.csv"                    
+[205] "205.csv"                     "206.csv"                    
+[207] "207.csv"                     "208.csv"                    
+[209] "209.csv"                     "210.csv"                    
+[211] "211.csv"                     "212.csv"                    
+[213] "213.csv"                     "214.csv"                    
+[215] "215.csv"                     "216.csv"                    
+[217] "217.csv"                     "218.csv"                    
+[219] "219.csv"                     "220.csv"                    
+[221] "221.csv"                     "222.csv"                    
+[223] "223.csv"                     "224.csv"                    
+[225] "225.csv"                     "226.csv"                    
+[227] "227.csv"                     "228.csv"                    
+[229] "229.csv"                     "230.csv"                    
+[231] "231.csv"                     "232.csv"                    
+[233] "233.csv"                     "234.csv"                    
+[235] "235.csv"                     "236.csv"                    
+[237] "237.csv"                     "238.csv"                    
+[239] "239.csv"                     "240.csv"                    
+[241] "241.csv"                     "242.csv"                    
+[243] "243.csv"                     "244.csv"                    
+[245] "245.csv"                     "246.csv"                    
+[247] "247.csv"                     "248.csv"                    
+[249] "249.csv"                     "250.csv"                    
+[251] "251.csv"                     "252.csv"                    
+[253] "253.csv"                     "254.csv"                    
+[255] "255.csv"                     "256.csv"                    
+[257] "257.csv"                     "258.csv"                    
+[259] "259.csv"                     "260.csv"                    
+[261] "261.csv"                     "262.csv"                    
+[263] "263.csv"                     "264.csv"                    
+[265] "265.csv"                     "266.csv"                    
+[267] "267.csv"                     "268.csv"                    
+[269] "269.csv"                     "270.csv"                    
+[271] "271.csv"                     "272.csv"                    
+[273] "273.csv"                     "274.csv"                    
+[275] "275.csv"                     "276.csv"                    
+[277] "277.csv"                     "278.csv"                    
+[279] "279.csv"                     "280.csv"                    
+[281] "281.csv"                     "282.csv"                    
+[283] "283.csv"                     "284.csv"                    
+[285] "285.csv"                     "286.csv"                    
+[287] "287.csv"                     "288.csv"                    
+[289] "289.csv"                     "290.csv"                    
+[291] "291.csv"                     "292.csv"                    
+[293] "293.csv"                     "294.csv"                    
+[295] "295.csv"                     "296.csv"                    
+[297] "297.csv"                     "298.csv"                    
+[299] "299.csv"                     "300.csv"                    
+[301] "301.csv"                     "302.csv"                    
+[303] "303.csv"                     "304.csv"                    
+[305] "305.csv"                     "306.csv"                    
+[307] "307.csv"                     "308.csv"                    
+[309] "309.csv"                     "310.csv"                    
+[311] "311.csv"                     "312.csv"                    
+[313] "313.csv"                     "314.csv"                    
+[315] "315.csv"                     "316.csv"                    
+[317] "317.csv"                     "318.csv"                    
+[319] "319.csv"                     "320.csv"                    
+[321] "321.csv"                     "322.csv"                    
+[323] "323.csv"                     "324.csv"                    
+[325] "325.csv"                     "326.csv"                    
+[327] "327.csv"                     "328.csv"                    
+[329] "329.csv"                     "330.csv"                    
+[331] "331.csv"                     "332.csv"                    
+[333] "makevector.R"                "Pollutionmean.R"            
+[335] "Pollutsntmean (Autosaved).R" "Pollutsntmean.R"            
+[337] "rprog_data_specdata.zip"    
+> list.files()
+  [1] "001.csv"      "002.csv"      "003.csv"      "004.csv"      "005.csv"     
+  [6] "006.csv"      "007.csv"      "008.csv"      "009.csv"      "010.csv"     
+ [11] "011.csv"      "012.csv"      "013.csv"      "014.csv"      "015.csv"     
+ [16] "016.csv"      "017.csv"      "018.csv"      "019.csv"      "020.csv"     
+ [21] "021.csv"      "022.csv"      "023.csv"      "024.csv"      "025.csv"     
+ [26] "026.csv"      "027.csv"      "028.csv"      "029.csv"      "030.csv"     
+ [31] "031.csv"      "032.csv"      "033.csv"      "034.csv"      "035.csv"     
+ [36] "036.csv"      "037.csv"      "038.csv"      "039.csv"      "040.csv"     
+ [41] "041.csv"      "042.csv"      "043.csv"      "044.csv"      "045.csv"     
+ [46] "046.csv"      "047.csv"      "048.csv"      "049.csv"      "050.csv"     
+ [51] "051.csv"      "052.csv"      "053.csv"      "054.csv"      "055.csv"     
+ [56] "056.csv"      "057.csv"      "058.csv"      "059.csv"      "060.csv"     
+ [61] "061.csv"      "062.csv"      "063.csv"      "064.csv"      "065.csv"     
+ [66] "066.csv"      "067.csv"      "068.csv"      "069.csv"      "070.csv"     
+ [71] "071.csv"      "072.csv"      "073.csv"      "074.csv"      "075.csv"     
+ [76] "076.csv"      "077.csv"      "078.csv"      "079.csv"      "080.csv"     
+ [81] "081.csv"      "082.csv"      "083.csv"      "084.csv"      "085.csv"     
+ [86] "086.csv"      "087.csv"      "088.csv"      "089.csv"      "090.csv"     
+ [91] "091.csv"      "092.csv"      "093.csv"      "094.csv"      "095.csv"     
+ [96] "096.csv"      "097.csv"      "098.csv"      "099.csv"      "100.csv"     
+[101] "101.csv"      "102.csv"      "103.csv"      "104.csv"      "105.csv"     
+[106] "106.csv"      "107.csv"      "108.csv"      "109.csv"      "110.csv"     
+[111] "111.csv"      "112.csv"      "113.csv"      "114.csv"      "115.csv"     
+[116] "116.csv"      "117.csv"      "118.csv"      "119.csv"      "120.csv"     
+[121] "121.csv"      "122.csv"      "123.csv"      "124.csv"      "125.csv"     
+[126] "126.csv"      "127.csv"      "128.csv"      "129.csv"      "130.csv"     
+[131] "131.csv"      "132.csv"      "133.csv"      "134.csv"      "135.csv"     
+[136] "136.csv"      "137.csv"      "138.csv"      "139.csv"      "140.csv"     
+[141] "141.csv"      "142.csv"      "143.csv"      "144.csv"      "145.csv"     
+[146] "146.csv"      "147.csv"      "148.csv"      "149.csv"      "150.csv"     
+[151] "151.csv"      "152.csv"      "153.csv"      "154.csv"      "155.csv"     
+[156] "156.csv"      "157.csv"      "158.csv"      "159.csv"      "160.csv"     
+[161] "161.csv"      "162.csv"      "163.csv"      "164.csv"      "165.csv"     
+[166] "166.csv"      "167.csv"      "168.csv"      "169.csv"      "170.csv"     
+[171] "171.csv"      "172.csv"      "173.csv"      "174.csv"      "175.csv"     
+[176] "176.csv"      "177.csv"      "178.csv"      "179.csv"      "180.csv"     
+[181] "181.csv"      "182.csv"      "183.csv"      "184.csv"      "185.csv"     
+[186] "186.csv"      "187.csv"      "188.csv"      "189.csv"      "190.csv"     
+[191] "191.csv"      "192.csv"      "193.csv"      "194.csv"      "195.csv"     
+[196] "196.csv"      "197.csv"      "198.csv"      "199.csv"      "200.csv"     
+[201] "201.csv"      "202.csv"      "203.csv"      "204.csv"      "205.csv"     
+[206] "206.csv"      "207.csv"      "208.csv"      "209.csv"      "210.csv"     
+[211] "211.csv"      "212.csv"      "213.csv"      "214.csv"      "215.csv"     
+[216] "216.csv"      "217.csv"      "218.csv"      "219.csv"      "220.csv"     
+[221] "221.csv"      "222.csv"      "223.csv"      "224.csv"      "225.csv"     
+[226] "226.csv"      "227.csv"      "228.csv"      "229.csv"      "230.csv"     
+[231] "231.csv"      "232.csv"      "233.csv"      "234.csv"      "235.csv"     
+[236] "236.csv"      "237.csv"      "238.csv"      "239.csv"      "240.csv"     
+[241] "241.csv"      "242.csv"      "243.csv"      "244.csv"      "245.csv"     
+[246] "246.csv"      "247.csv"      "248.csv"      "249.csv"      "250.csv"     
+[251] "251.csv"      "252.csv"      "253.csv"      "254.csv"      "255.csv"     
+[256] "256.csv"      "257.csv"      "258.csv"      "259.csv"      "260.csv"     
+[261] "261.csv"      "262.csv"      "263.csv"      "264.csv"      "265.csv"     
+[266] "266.csv"      "267.csv"      "268.csv"      "269.csv"      "270.csv"     
+[271] "271.csv"      "272.csv"      "273.csv"      "274.csv"      "275.csv"     
+[276] "276.csv"      "277.csv"      "278.csv"      "279.csv"      "280.csv"     
+[281] "281.csv"      "282.csv"      "283.csv"      "284.csv"      "285.csv"     
+[286] "286.csv"      "287.csv"      "288.csv"      "289.csv"      "290.csv"     
+[291] "291.csv"      "292.csv"      "293.csv"      "294.csv"      "295.csv"     
+[296] "296.csv"      "297.csv"      "298.csv"      "299.csv"      "300.csv"     
+[301] "301.csv"      "302.csv"      "303.csv"      "304.csv"      "305.csv"     
+[306] "306.csv"      "307.csv"      "308.csv"      "309.csv"      "310.csv"     
+[311] "311.csv"      "312.csv"      "313.csv"      "314.csv"      "315.csv"     
+[316] "316.csv"      "317.csv"      "318.csv"      "319.csv"      "320.csv"     
+[321] "321.csv"      "322.csv"      "323.csv"      "324.csv"      "325.csv"     
+[326] "326.csv"      "327.csv"      "328.csv"      "329.csv"      "330.csv"     
+[331] "331.csv"      "332.csv"      "makevector.R" "specdata"    
+> pollutantmean <- function(directory, pollutant, id=1:332) { 
++   
++   # Create a list of files in the directory argument
++   files_list <- list.files(directory, full.names = TRUE) 
++   df <- data.frame() #creates an empty data frame
++   
++   # Loop through the files, rbinding them together
++   for (i in id) {
++     df <- rbind(df, read.csv(files_list[i]))
++   }
++   
++   # Subset the column that matches the 'pollutant'  argument
++   df_subset <- df[,pollutant] 
++   
++   # Calculate the mean value
++   mean(df_subset, na.rm = TRUE) 
++ }
+> pollutantmean("specdata", "sulfate", 1:10) 
+[1] 4.064128
+> pollutantmean("specdata", "nitrate", 70:72)
+[1] 1.706047
+> pollutantmean("specdata", "sulfate", 34)
+[1] 1.477143
+> pollutantmean("specdata", "nitrate")
+[1] 1.702932
+pollutantmean("specdata", "nitrate")
+> 
+> pollutantmean("specdata", "nitrate")
+[1] 1.702932
+> complete <- function(directory,id=1:332) { 
++   
++   # Create a list of files in the directory argument
++   files_list <- list.files(directory, full.names = TRUE)
++   df1 <- data.frame() #creates an empty data frame
++   
++   # Loop through the files, rbinding them together
++   for (i in id) {
++     df1 <- rbind(df1, read.csv(files_list[i]))
++   }
++   
++   # Filter out the rows where 'NA' shows up in either the sulfate or nitrate columns
++   df1 <- df1[ !is.na(df1$sulfate & df1$nitrate), ]
++   
++   # Initialize the row index of the output dataframe
++   running.index <- 0
++   
++   # Set up the 'container' vectors for 'monitorid' and 'nobs'
++   monitorid <- numeric(length(id))
++   nobs <- numeric(length(id))
++   
++   for (i in id) {
++     running.index <- running.index+1
++     monitorid[running.index] <- i
++     nobs[running.index] <- sum(df1$ID == i)
++   }
++   
++   monitorid <- monitorid[1:running.index]
++   nobs <- nobs[1:running.index]
++   
++   # Create a dataframe from the 'monitorid' and 'nobs' vectors.
++   result <- data.frame(monitorid,nobs)
++ }
+> RNGversion("3.5.1")  
+Warning message:
+In RNGkind("Mersenne-Twister", "Inversion", "Rounding") :
+  non-uniform 'Rounding' sampler used
+> set.seed(42)
+> cc <- complete("specdata", 332:1)
+> use <- sample(332, 10)
+> print(cc[use, "nobs"])
+ [1] 711 135  74 445 178  73  49   0 687 237
+> 
+> corr <- function(directory, threshold = 0) {
++   
++   # Make sure the R data.table package is loaded
++   require(data.table)
++   
++   # Reading in all files and making a large data.table
++   files_list <- lapply(file.path(directory, list.files(path = directory,pattern ="*.csv")), data.table::fread)
++   
++   # Bind all of the csv files together into one big file.
++   dt <- rbindlist(files_list)
++   
++   # Only keep the completely observed cases
++   dt <- dt[complete.cases(dt),]
++   
++   # Apply threshold and calculate correlations for those IDs whose nobs exceed the threshold 
++   dt <- dt[, .(nobs = .N, corr = cor(x = sulfate, y = nitrate)), by = ID][nobs > threshold]
++   
++   return(dt[, corr])
++ }
+> v = corr("specdata",150)
+> v
+  [1] -0.018957541 -0.140512544 -0.043897372 -0.068159562 -0.123506666 -0.075888144
+  [7] -0.159673652 -0.086841940  0.763128837 -0.157828603 -0.156998919 -0.044898818
+ [13]  0.117249264  0.259057178  0.133274607  0.366201078  0.580751264  0.006863930
+ [19]  0.726693888  0.057741676  0.115338086  0.465754012  0.515804375  0.412693537
+ [25]  0.375631176  0.315725317  0.244560561  0.594426499  0.553514976  0.614340566
+ [31]  0.460513619  0.405022501  0.434789780  0.088421364  0.118136697 -0.091022820
+ [37] -0.033091304  0.440660466 -0.029683708  0.268525390  0.277220958 -0.049108453
+ [43]  0.322627410  0.091139374 -0.025750053  0.120521602 -0.061746831  0.041306963
+ [49] -0.146202136 -0.162485185 -0.097254393  0.089262856  0.568403991  0.711864008
+ [55]  0.268203237  0.190644585  0.227222983  0.229238882  0.005635506  0.018628108
+ [61] -0.064750174  0.096614297  0.002864405  0.107184775  0.128477284 -0.042533572
+ [67] -0.137041337  0.136609030  0.118975253  0.098073855  0.066928310  0.100212474
+ [73] -0.063984344 -0.066525489 -0.129245884 -0.111066409 -0.089441210 -0.114090325
+ [79] -0.106280702 -0.176855164 -0.116984680  0.019138583  0.100643502 -0.073858484
+ [85]  0.036665921 -0.107957809  0.296744105  0.347421569  0.146528765  0.362414577
+ [91]  0.093330832  0.198915192  0.164602262  0.180626975  0.176508543  0.139158631
+ [97]  0.231984399  0.227615918  0.275903634  0.299630040  0.248143145  0.298344178
+[103] -0.056325366 -0.178114558  0.002032940 -0.022802183 -0.001202233  0.085217423
+[109] -0.076409023  0.010021716  0.016411646 -0.038785934 -0.075297768  0.041917773
+[115]  0.193324040  0.596929143  0.113596590 -0.143750037 -0.017703373  0.284905360
+[121]  0.305506111  0.150031306  0.134895077  0.172850003  0.286076203 -0.106687748
+[127]  0.244744168  0.337120085  0.424798956  0.095921881  0.022899033  0.143330735
+[133]  0.087196218  0.408741028  0.425176879  0.361728434 -0.035090337 -0.082388453
+[139] -0.094742313 -0.087573726 -0.060405837 -0.092398269 -0.183197353  0.124650112
+[145] -0.053001162 -0.039911536  0.010158287  0.451828854  0.295793699  0.615268727
+[151] -0.075214053  0.132207405  0.089547098 -0.019086127 -0.045552626  0.211599525
+[157] -0.073972834  0.112668377  0.138387891 -0.003207550 -0.052643174  0.042168144
+[163] -0.067460173 -0.030882797  0.017805647  0.026138073 -0.050287543  0.016535643
+[169]  0.199919014  0.482158286  0.355110474  0.589606340  0.368038099 -0.029094866
+[175] -0.074495323  0.262101561 -0.005386993  0.258826380  0.144110820  0.101915017
+[181]  0.023020993  0.074594252  0.256665139  0.162401158 -0.003454405  0.190141976
+[187]  0.184581239  0.120596460 -0.176233152 -0.144699131  0.147074115  0.273520382
+[193]  0.109557323 -0.092863394 -0.182752126 -0.008836513  0.356592359 -0.089133895
+[199] -0.017185129 -0.156323514 -0.042538204  0.010235676 -0.009912754 -0.042910367
+[205] -0.210567709 -0.155957816  0.046211272 -0.060808231  0.160865053  0.615095781
+[211]  0.598343330  0.506535631  0.191834811 -0.024723462 -0.150627164 -0.002500089
+[217] -0.166201361  0.619349867  0.531380642  0.520115665  0.466673962  0.518820173
+[223]  0.394191512  0.379446208 -0.123172036 -0.061565518 -0.180133963  0.253978075
+[229]  0.139867175  0.316429404  0.268780500  0.279397143  0.267260662  0.287133842
+> cr <- corr("specdata")                
+> cr <- sort(cr)   
+> RNGversion("3.5.1")
+Warning message:
+In RNGkind("Mersenne-Twister", "Inversion", "Rounding") :
+  non-uniform 'Rounding' sampler used
+> 
+> set.seed(868)                
+> out <- round(cr[sample(length(cr), 5)], 4)
+> print(out)
+[1]  0.2688  0.1127 -0.0085  0.4586  0.0447
+> cr <- corr("specdata", 129)                
+> cr <- sort(cr)                
+> n <- length(cr)    
+> RNGversion("3.5.1")
+Warning message:
+In RNGkind("Mersenne-Twister", "Inversion", "Rounding") :
+  non-uniform 'Rounding' sampler used
+> set.seed(197)                
+> out <- c(n, round(cr[sample(n, 5)], 4))
+> print(out)
+[1] 243.0000   0.2540   0.0504  -0.1462  -0.1680   0.5969
+> cr <- corr("specdata", 2000)                
+> n <- length(cr)                
+> cr <- corr("specdata", 1000)                
+> cr <- sort(cr)
+> print(c(n, round(cr, 4)))
+[1]  0.0000 -0.0190  0.0419  0.1901
+> 
